@@ -6,7 +6,7 @@
 	"homepage": "https://github.com/modulargaming/KOstache",
 	"license": "MIT",
 	"require": {
-		"mustache/mustache": "~2.0.2",
+		"mustache/mustache": "~2.4.0",
 		"php": ">=5.3.0",
 		"composer/installers": "*"
 	}
