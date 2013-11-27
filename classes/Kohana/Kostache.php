@@ -36,7 +36,7 @@ class Kohana_Kostache {
 		$this->_engine = $engine;
 	}
 
-	public function render($class, $template = NULL)
+	public function render(Kohana_Kostache_View $class, $template = NULL)
 	{
 		if ($template == NULL)
 		{
@@ -45,6 +45,12 @@ class Kohana_Kostache {
 			$template = implode('/', $template);
 		}
 
-		return $this->_engine->loadTemplate($template)->render($class);
+        $class->before();
+
+        $body = $this->_engine->loadTemplate($template)->render($class);
+
+        $class->after($body);
+
+        return $body;
 	}
 }

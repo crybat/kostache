@@ -32,7 +32,7 @@ class Kohana_Kostache_Layout extends Kohana_Kostache {
 		$this->_layout = (string) $layout;
 	}
 
-	public function render($class, $template = NULL)
+	public function render(Kohana_Kostache_View $class, $template = NULL)
 	{
 		$this->_engine->setPartials(
 			array(
